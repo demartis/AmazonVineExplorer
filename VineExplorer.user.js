@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         Amazon Vine Explorer
-// @namespace    https://github.com/deburau/AmazonVineExplorer
+// @namespace    https://github.com/demartis/AmazonVineExplorer
 // @version      0.12.0
-// @updateURL    https://raw.githubusercontent.com/deburau/AmazonVineExplorer/main/VineExplorer.user.js
-// @downloadURL  https://raw.githubusercontent.com/deburau/AmazonVineExplorer/main/VineExplorer.user.js
+// @updateURL    https://raw.githubusercontent.com/demartis/AmazonVineExplorer/main/VineExplorer.user.js
+// @downloadURL  https://raw.githubusercontent.com/demartis/AmazonVineExplorer/main/VineExplorer.user.js
 // @supportURL   https://github.com/deburau/AmazonVineExplorer/issues
 // @description  Better View, Search and Explore for Amazon Vine Products - Vine Voices Edition
-// @author       MarkusSR1984, Christof121, Olum-hack, Deburau, adripo
+// @author       MarkusSR1984, Christof121, Olum-hack, Deburau, adripo, DeMartis
 // @match        https://www.amazon.com/*
 // @match        https://www.amazon.ca/*
 // @match        https://www.amazon.co.uk/*
