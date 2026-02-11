@@ -24,7 +24,7 @@ This script enhances the experience on the Amazon Vine website. However, it does
 ## How to install:
 
 * Install Tampermonkey: [https://www.tampermonkey.net/](https://www.tampermonkey.net/)
-* Install Amazon Vine Explorer: [https://github.com/deburau/AmazonVineExplorer/raw/main/VineExplorer.user.js](https://github.com/deburau/AmazonVineExplorer/raw/main/VineExplorer.user.js)
+* Install Amazon Vine Explorer: [Click here to install](https://github.com/demartis/AmazonVineExplorer/raw/main/VineExplorer.user.js)
 
 ## If it does not work
 
@@ -32,7 +32,7 @@ If AVE does not start after installing or upgrading, try a fresh install. Before
 
 Then open the Tampermonkey dashboard and delete all instances of AVE. Then open the Tampermonkey trashbin and delete all AVE instances from it.
 
-After that you can visit the GitHub repo https://github.com/deburau/AmazonVineExplorer, click on VineExplorer.user.js and then click the Raw button.
+After that you can visit the GitHub repo https://github.com/demartis/AmazonVineExplorer, click on VineExplorer.user.js and then click the Raw button.
 
 Now Tampermonkey should open and let you install the script.
 

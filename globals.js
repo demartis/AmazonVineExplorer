@@ -248,6 +248,10 @@ SETTINGS_USERCONFIG_DEFINES.push({key: 'ShowFirstSeen', type: 'bool', name: 'Sho
 SETTINGS_USERCONFIG_DEFINES.push({key: 'DesktopNotifikationKeywords', type: 'keywords', name: 'Desktop Notification Highlight Keywords', inputPlaceholder: 'Type in your highlight keywords one per line and click outside to submit', description: 'Create a List of words u want to Highlight if Product desciption containes one or more of them'});
 SETTINGS_USERCONFIG_DEFINES.push({key: 'GotifyUrl', type: 'url', name: 'URL of the Gotify Server', description: 'If Gotify should be used for notifications, enter the URL of your Gotify server here, e.g. https://gotify.example.com'});
 SETTINGS_USERCONFIG_DEFINES.push({key: 'GotifyToken', type: 'password', name: 'Gotify application token', description: 'The authenticatin token of your Gotify application'});
+SETTINGS_USERCONFIG_DEFINES.push({type: 'button', name: 'Test Gotify Notification', bgColor: '#dedede', description: 'Test Gotify Notification', key: '', btnClick: () => {gotifyNotification('Test notification');}});
+
+
+SETTINGS_USERCONFIG_DEFINES.push({type: 'title', name: 'Colors and Styles', description: '', key: 'TITLE_COLORS'});
 SETTINGS_USERCONFIG_DEFINES.push({key: 'BackGroundScanDelayPerPage', type: 'number', min: 2000, max: 20000, name: 'Background Scan Per Page Min Delay(Milliseconds)', description: 'Minimal Delay per Page load of Background Scan'});
 SETTINGS_USERCONFIG_DEFINES.push({key: 'BackGroundScannerRandomness', type: 'number', min: 100, max: 10000, name: 'Background Scan Randomness per Page(Milliseconds)', description: 'A Value that gives the maximal range for the Randomy added delay per page load'});
 SETTINGS_USERCONFIG_DEFINES.push({key: 'DesktopNotifikationDelay', type: 'number', min: 0, max: 3600, name: 'Desktop Notifikation Delay (Seconds)', description: 'Minimal time between desktop notifikations, exept notifikations for keyword matches. A value of 0 disables this notifications.'});

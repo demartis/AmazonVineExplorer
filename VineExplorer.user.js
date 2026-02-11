@@ -1,20 +1,20 @@
 // ==UserScript==
 // @name         Amazon Vine Explorer
 // @namespace    https://github.com/demartis/AmazonVineExplorer
-// @version      0.12.0
+// @version      0.12.1
 // @updateURL    https://raw.githubusercontent.com/demartis/AmazonVineExplorer/main/VineExplorer.user.js
 // @downloadURL  https://raw.githubusercontent.com/demartis/AmazonVineExplorer/main/VineExplorer.user.js
 // @supportURL   https://github.com/deburau/AmazonVineExplorer/issues
 // @description  Better View, Search and Explore for Amazon Vine Products - Vine Voices Edition
 // @author       MarkusSR1984, Christof121, Olum-hack, Deburau, adripo, DeMartis
-// @match        https://www.amazon.com/*
-// @match        https://www.amazon.ca/*
-// @match        https://www.amazon.co.uk/*
-// @match        https://www.amazon.de/*
-// @match        https://www.amazon.fr/*
-// @match        https://www.amazon.it/*
-// @match        https://www.amazon.es/*
-// @match        https://www.amazon.co.jp/*
+// @match        https://www.amazon.com/vine/*
+// @match        https://www.amazon.ca/vine/*
+// @match        https://www.amazon.co.uk/vine/*
+// @match        https://www.amazon.de/vine/*
+// @match        https://www.amazon.fr/vine/*
+// @match        https://www.amazon.it/vine/*
+// @match        https://www.amazon.es/vine/*
+// @match        https://www.amazon.co.jp/vine/*
 // @license      MIT
 // @icon64       https://raw.githubusercontent.com/deburau/AmazonVineExplorer/main/vine_logo.png
 // @run-at       document-start
@@ -2804,12 +2804,12 @@ function updateNewProductsBtn() {
                     localStorage.setItem('AVE_LAST_UNSEEN_NOTIFICATION', Date.now());
 
                     if (SETTINGS.GotifyUrl) {
-                        gotifyNotification(translate('notifications', 'unseenItemsBody', `Es wurden ${_prodArrLength} neue Eintraege gefunden`, _prodArrLength));
+                        gotifyNotification(translate('notifications', 'unseenItemsBody', `Drop! ${_prodArrLength} new items found`, _prodArrLength));
                     }
                     if (SETTINGS.EnableDesktopNotifikation) {
                         desktopNotifikation(
                             translate('notifications', 'unseenItemsTitle', `Amazon Vine Explorer - ${AVE_VERSION}`, AVE_VERSION),
-                            translate('notifications', 'unseenItemsBody', `Es wurden ${_prodArrLength} neue Eintraege gefunden`, _prodArrLength)
+                            translate('notifications', 'unseenItemsBody', `Drop! ${_prodArrLength} new items found`, _prodArrLength)
                         );
                     }
                 }
