@@ -3160,7 +3160,7 @@ function init(hasTiles) {
             //_currTile.style.cssText = "background-color: yellow;";
             _tilePorms.push(parseTileData(_currTile).then((_product) => {
                 if (SETTINGS.DebugLevel > 14) console.log('Come Back from parseTileData <<<<<<<<<< INIT <<<<<<<<<<<<<<<<<<<<<<<', _currTile, _product);
-                if(SETTINGS.EnableNewAlwaysOnTop && _currTile.isNew){ 
+                if(SETTINGS.EnableNewAlwaysOnTop && _product.isNew){ 
                     let grid = document.getElementById('vvp-items-grid');
                     grid.moveBefore(_currTile,grid.firstChild);
                 }
