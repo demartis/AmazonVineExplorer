@@ -666,8 +666,8 @@ function createTimeSeenElement(prod, index = Math.round(Math.random()* 10000), s
     } else {
         _timeSeenElement.textContent = 'Last seen: ' + timeAgo(new Date(toTimestamp(prod.ts_lastSeen)));
     }
-    _timeSeenElement.style.float = 'left';
-    _timeSeenElement.style.display = 'flex';
+    // _timeSeenElement.style.float = 'left';
+    // _timeSeenElement.style.display = 'flex';
     return _timeSeenElement;
 }
 
@@ -723,10 +723,10 @@ function createShareElement(prod, index = Math.round(Math.random()* 10000)) {
     _shareElement.setAttribute("id", `ave-p-share-${index || Math.round(Math.random() * 5000)}`);
     _shareElement.classList.add('ave-share');
     _shareElement.textContent = '🔗';
-    _shareElement.style.float = 'left';
-    _shareElement.style.display = 'flex';
-_shareElement.style.margin = '0';
-    _shareElement.style.cursor = 'pointer';
+    // _shareElement.style.float = 'left';
+    // _shareElement.style.display = 'flex';
+    // _shareElement.style.margin = '0';
+    // _shareElement.style.cursor = 'pointer';
     return _shareElement;
 }
 
