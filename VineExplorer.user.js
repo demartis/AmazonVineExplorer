@@ -598,7 +598,8 @@ async function createTileFromProduct(product, btnID, cb) {
                 ${_spanTruncateHtml}
             </a>
         ` : _spanTruncateHtml;
-var _itemBadgesHtml = '';
+        
+        var _itemBadgesHtml = '';
         if (product.data_is_pre_release || product.data_is_featured) {
             _itemBadgesHtml += '<div class="vvp-item-badges" style="margin-top: 20px;">';
             if (product.data_is_pre_release) {
@@ -3156,9 +3157,13 @@ function init(hasTiles) {
         const _parseStartTime = Date.now();
         for (let i = 0; i < _tilesLength; i++) {
             const _currTile = _tiles[i];
-            _currTile.style.cssText = "background-color: yellow;";
+            //_currTile.style.cssText = "background-color: yellow;";
             _tilePorms.push(parseTileData(_currTile).then((_product) => {
                 if (SETTINGS.DebugLevel > 14) console.log('Come Back from parseTileData <<<<<<<<<< INIT <<<<<<<<<<<<<<<<<<<<<<<', _currTile, _product);
+                if(SETTINGS.EnableNewAlwaysOnTop && _currTile.isNew){ 
+                    let grid = document.getElementById('vvp-items-grid');
+                    grid.moveBefore(_currTile,grid.firstChild);
+                }
                 addStyleToTile(_currTile, _product);
 
             }));
