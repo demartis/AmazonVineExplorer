@@ -245,6 +245,8 @@ SETTINGS_USERCONFIG_DEFINES.push({key: 'EnableAutoMarkFavorite', type: 'bool', n
 SETTINGS_USERCONFIG_DEFINES.push({key: 'EnableCleanupFavorites', type: 'bool', name: 'Also remove favorites when cleaning up products', description: 'If enabled, favorite products will also be removed during the cleanup process based on the defined criteria.'});
 SETTINGS_USERCONFIG_DEFINES.push({key: 'EnableBtnMarkAllAsSeen', type: 'bool', name: 'Enable Button Mark all as seen', description: 'Enable the Button Mark all as seen'});
 SETTINGS_USERCONFIG_DEFINES.push({key: 'ShowFirstSeen', type: 'bool', name: 'Show first seen instead of last seen', description: 'Instead of the &quot;Last seen&quot; date in the product box show the date, the item was first seen'});
+SETTINGS_USERCONFIG_DEFINES.push({key: 'EnableNewAlwaysOnTop', type: 'bool', name: 'Enable New Items Always on Top', description: 'Enable the New Items Always on Top Feature'});
+
 SETTINGS_USERCONFIG_DEFINES.push({key: 'DesktopNotifikationKeywords', type: 'keywords', name: 'Desktop Notification Highlight Keywords', inputPlaceholder: 'Type in your highlight keywords one per line and click outside to submit', description: 'Create a List of words u want to Highlight if Product desciption containes one or more of them'});
 SETTINGS_USERCONFIG_DEFINES.push({key: 'GotifyUrl', type: 'url', name: 'URL of the Gotify Server', description: 'If Gotify should be used for notifications, enter the URL of your Gotify server here, e.g. https://gotify.example.com'});
 SETTINGS_USERCONFIG_DEFINES.push({key: 'GotifyToken', type: 'password', name: 'Gotify application token', description: 'The authenticatin token of your Gotify application'});
@@ -363,7 +365,7 @@ class SETTINGS_DEFAULT {
     // CssProductFavTag = "border: 2mm ridge rgba(255, 255, 102, .6); background-color: rgba(255, 255, 102, .2)";
     // CssProductRemovalTag = "border: 2mm ridge rgba(255, 87, 51, .6); background-color: rgba(255, 87, 51, .2)";
     // CssProductDefault = "border: 2mm ridge rgba(173,216,230, .6); background-color: rgba(173,216,230, .2)";
-    CssProductNewTag = "border: 1mm solid rgba(218, 247, 166, .6); background-color: rgba(218, 247, 166, .2)";
+    CssProductNewTag = "    border: 1mm solid rgb(167, 237, 41); background-color: rgba(173, 243, 137, 0.4);";
     CssProductSaved = "";
     CssProductFavTag = "border: 1mm solid rgba(255, 255, 102, .6); background-color: rgba(255, 255, 102, .2)";
     CssProductRemovalTag = "border: 1mm solid rgba(255, 87, 51, .6); background-color: rgba(255, 87, 51, .2)";

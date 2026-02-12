@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Amazon Vine Explorer
 // @namespace    https://github.com/demartis/AmazonVineExplorer
-// @version      0.12.2
+// @version      0.12.3
 // @updateURL    https://raw.githubusercontent.com/demartis/AmazonVineExplorer/main/VineExplorer.user.js
 // @downloadURL  https://raw.githubusercontent.com/demartis/AmazonVineExplorer/main/VineExplorer.user.js
 // @supportURL   https://github.com/deburau/AmazonVineExplorer/issues
@@ -977,7 +977,11 @@ async function appendInfiniteScrollTiles(cb = ()=>{}){
             });
         } else {
             createTileFromProduct(_tile).then((_elem) => {
-                _tilesContainer.appendChild(_elem);
+                if(SETTINGS.EnableNewAlwaysOnTop && _tile.isNew){
+                    _tilesContainer.insertBefore(_elem, _tilesContainer.firstChild);
+                } else {
+                    _tilesContainer.appendChild(_elem);
+                }
                 addTileEventhandlers(_elem);
             })
         }
