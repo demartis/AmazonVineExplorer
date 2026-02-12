@@ -163,8 +163,8 @@ const I18N = {
             markAllAsSeen: 'Mark all as seen',
             backToTop: 'Back to top',
             settingsTab: 'AVE Settings',
-            favorites: 'Favorites',
-            newEntries: 'New Entries',
+            favorites: 'Fav',
+            newEntries: 'New',
         },
         badges: {
             preRelease: 'Pre-release',

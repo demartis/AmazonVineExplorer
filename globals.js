@@ -318,7 +318,7 @@ class SETTINGS_DEFAULT {
     EnableDesktopNotifikation = false;
     EnableAutoMarkFavorite = false;
     EnableCleanupFavorites = false;
-EnableBtnAll = true;
+    EnableBtnAll = true;
     EnablePaginationTop = true;
     EnableBtnMarkAllAsSeen = true;
     ShowFirstSeen = false;
@@ -343,7 +343,7 @@ EnableBtnAll = true;
     HoursBeforeCleanup = 24;
     PageLoadMinDelay = 750;
     DebugLevel = 0;
-MaxItemsPerPage = 500;
+    MaxItemsPerPage = 500;
     UnseenItemsNotificationThreshold = 0;
     NewItemsNotificationThreshold = 0;
     NewItemsNotificationRepititionMinutes = 30;
@@ -358,11 +358,18 @@ MaxItemsPerPage = 500;
     DesktopNotifikationKeywords = [];
     GotifyUrl = '';
     GotifyToken = '';
-    CssProductNewTag = "border: 2mm ridge rgba(218, 247, 166, .6); background-color: rgba(218, 247, 166, .2)";
-    CssProductSaved = "border: 2mm ridge rgba(105, 163, 0, .6); background-color: rgba(105, 163, 0, .2)";
-    CssProductFavTag = "border: 2mm ridge rgba(255, 255, 102, .6); background-color: rgba(255, 255, 102, .2)";
-    CssProductRemovalTag = "border: 2mm ridge rgba(255, 87, 51, .6); background-color: rgba(255, 87, 51, .2)";
-    CssProductDefault = "border: 2mm ridge rgba(173,216,230, .6); background-color: rgba(173,216,230, .2)";
+    // CssProductNewTag = "border: 2mm ridge rgba(218, 247, 166, .6); background-color: rgba(218, 247, 166, .2)";
+    // CssProductSaved = "border: 2mm ridge rgba(105, 163, 0, .6); background-color: rgba(105, 163, 0, .2)";
+    // CssProductFavTag = "border: 2mm ridge rgba(255, 255, 102, .6); background-color: rgba(255, 255, 102, .2)";
+    // CssProductRemovalTag = "border: 2mm ridge rgba(255, 87, 51, .6); background-color: rgba(255, 87, 51, .2)";
+    // CssProductDefault = "border: 2mm ridge rgba(173,216,230, .6); background-color: rgba(173,216,230, .2)";
+    CssProductNewTag = "border: 1mm solid rgba(218, 247, 166, .6); background-color: rgba(218, 247, 166, .2)";
+    CssProductSaved = "";
+    CssProductFavTag = "border: 1mm solid rgba(255, 255, 102, .6); background-color: rgba(255, 255, 102, .2)";
+    CssProductRemovalTag = "border: 1mm solid rgba(255, 87, 51, .6); background-color: rgba(255, 87, 51, .2)";
+    CssProductDefault = "";
+
+
 
     constructor() {
         ave_eventhandler.on('ave-save-cofig', () => {
@@ -371,9 +378,9 @@ MaxItemsPerPage = 500;
         })
     }
 
-    CssProductFavStar() {
-        return `float: right; display: flex; margin: 0px; color: ${this.FavStarColorDefault}; height: 0px; font-size: 25px; text-shadow: black -1px 0px, black 0px 1px, black 1px 0px, black 0px -1px; cursor: pointer;`;
-    }
+    // CssProductFavStar() {
+    //     return `float: right; display: flex; margin: 0px; color: ${this.FavStarColorDefault}; height: 0px; font-size: 25px; text-shadow: black -1px 0px, black 0px 1px, black 1px 0px, black 0px -1px; cursor: pointer;`;
+    // }
 
     save(local) {
         if (local) {

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Amazon Vine Explorer
 // @namespace    https://github.com/demartis/AmazonVineExplorer
-// @version      0.12.1
+// @version      0.12.2
 // @updateURL    https://raw.githubusercontent.com/demartis/AmazonVineExplorer/main/VineExplorer.user.js
 // @downloadURL  https://raw.githubusercontent.com/demartis/AmazonVineExplorer/main/VineExplorer.user.js
 // @supportURL   https://github.com/deburau/AmazonVineExplorer/issues
@@ -624,9 +624,13 @@ var _itemBadgesHtml = '';
                 </span>
             </div>
         `;
-        _tile.prepend(createFavStarElement(product, btnID));
-        _tile.prepend(createTimeSeenElement(product, btnID));
-        _tile.prepend(createShareElement(product, btnID));
+        const _toolsContainer = document.createElement('div');
+            _toolsContainer.classList.add('ave-tile-tools-container');
+            _toolsContainer.prepend(createFavStarElement(product, btnID));
+            _toolsContainer.prepend(createTimeSeenElement(product, btnID));
+            _toolsContainer.prepend(createShareElement(product, btnID));    
+        _tile.prepend(_toolsContainer);
+
         waitForHtmlElement('.vvp-item-product-title-container', (_elem) => {
             if (!_elem) return;
 
@@ -641,7 +645,7 @@ function createFavStarElement(prod, index = Math.round(Math.random()* 10000)) {
     const _favElement = document.createElement('div');
     _favElement.setAttribute("id", `p-fav-${index || Math.round(Math.random() * 5000)}`);
     _favElement.classList.add('ave-favorite-star');
-    _favElement.style.cssText = SETTINGS.CssProductFavStar();
+    // _favElement.style.cssText = SETTINGS.CssProductFavStar();
     _favElement.textContent = '★';
     if (prod.isFav) _favElement.style.color = SETTINGS.FavStarColorChecked; // SETTINGS.FavStarColorChecked = Gelb;
     return _favElement;
@@ -1583,6 +1587,33 @@ font-weight: bold;
   border: none;
   background: none;
   margin: 3px;
+}
+
+.ave-tile-tools-container{
+  position: absolute;
+  width: 100%;
+}
+
+.ave-favorite-star{
+  margin: 2px 1px;
+  color: white;
+  height: 0px;
+  font-size: 25px;
+  text-shadow: black -1px 0px, black 0px 1px, black 1px 0px, black 0px -1px;
+  cursor: pointer;
+  position: absolute;
+  right: 0px;
+}
+.ave-share{
+  margin: 0px;
+  cursor: pointer;
+  position: absolute;
+  left: 3px;
+}
+.ave-last-seen{
+  position: absolute;
+  text-align: center;
+  width: 100%;
 }
 
 ::-webkit-color-swatch-wrapper {
@@ -3052,9 +3083,12 @@ function addStyleToTile(_currTile, _product) {
 
         // Update Timestamps
     }
-    _currTile.prepend(createFavStarElement(_product));
-    _currTile.prepend(createFirstSeenElement(_product));
-    _currTile.prepend(createShareElement(_product));
+    const _toolsContainer = document.createElement('div');
+        _toolsContainer.classList.add('ave-tile-tools-container');
+        _toolsContainer.prepend(createFavStarElement(_product));
+        _toolsContainer.prepend(createFirstSeenElement(_product));
+        _toolsContainer.prepend(createShareElement(_product));
+    _currTile.prepend(_toolsContainer);
     // insertHtmlElementAfter((_currTile.getElementsByClassName('vvp-item-product-title-container')[0]), createTaxInfoElement(_product));
     waitForHtmlElement('.vvp-item-product-title-container', (_elem) => {
         if (!_elem) return;
@@ -3140,9 +3174,13 @@ function init(hasTiles) {
 
     if (AUTO_SCAN_IS_RUNNING) return;
 
+    //document.getElementById('vvp-items-button--recommended').firstElementChild.firstElementChild.innerText = 'RFY';
+    //document.getElementById('vvp-items-button--all').firstElementChild.firstElementChild.innerText = 'AFA';
+    //document.getElementById('vvp-items-button--seller').firstElementChild.firstElementChild.innerText = 'AI';
+
     const _searchbarContainer = document.getElementById('vvp-items-button-container');
 
-    if (SETTINGS.EnableBtnAll) _searchbarContainer.appendChild(createNavButton('ave-btn-favorites', 'Alle Produkte', '', SETTINGS.BtnColorAllProducts, () => { createNewSite(PAGETYPE.ALL); }));
+    if (SETTINGS.EnableBtnAll) _searchbarContainer.appendChild(createNavButton('ave-btn-favorites', 'All', '', SETTINGS.BtnColorAllProducts, () => { createNewSite(PAGETYPE.ALL); }));
     _searchbarContainer.appendChild(createNavButton('ave-btn-favorites', translate('buttons', 'favorites', 'Favoriten'), '', SETTINGS.BtnColorFavorites, () => {createNewSite(PAGETYPE.FAVORITES);}, 'ave-fav-items-btn-badge', '-', SETTINGS.BtnColorFavoritesBadge));
     _searchbarContainer.appendChild(createNavButton('ave-btn-list-new', translate('buttons', 'newEntries', 'Neue Einträge'), 'ave-new-items-btn', SETTINGS.BtnColorNewProducts, () => {createNewSite(PAGETYPE.NEW_ITEMS);}, 'ave-new-items-btn-badge', '-', SETTINGS.BtnColorNewProductsBadge));
 
@@ -3156,9 +3194,9 @@ _searchBarSpan.style.cssText = `margin-left: 0.5em;`;
 
     const _searchBarInput = document.createElement('input');
     _searchBarInput.setAttribute('type', 'search');
-    _searchBarInput.setAttribute('placeholder', 'Suche Vine Produkte');
+    _searchBarInput.setAttribute('placeholder', 'Search');
     _searchBarInput.setAttribute('name', 'ave-search');
-    _searchBarInput.style.cssText = `width: 15em;`;
+    _searchBarInput.style.cssText = `width: 8em;`;
     _searchBarInput.addEventListener('keyup', (ev) => {
         const _input = _searchBarInput.value.toLowerCase();
         if (SETTINGS.DebugLevel > 10) console.log(`Updated Input: ${_input}`);
