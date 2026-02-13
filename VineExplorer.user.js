@@ -3072,11 +3072,8 @@ function addStyleToTile(_currTile, _product) {
 
     if (!_product.gotFromDB) { // We have a new one ==> Save it to our Database ;)
         database.add(_product);
-        //_currTile.style.cssText = SETTINGS.CssProductSaved;
-        //_currTile.classList.add('ave-element-saved');
-        // to me if a product wasn't in the database it means it is new, so we can directly mark it as new
-        _style = SETTINGS.CssProductNewTag;
-        _currTile.classList.add('ave-element-new');
+        _currTile.style.cssText = SETTINGS.CssProductSaved;
+        _currTile.classList.add('ave-element-saved');
     } else {
         let _style = SETTINGS.CssProductDefault;
         if (_product.isNew) {
@@ -3163,7 +3160,7 @@ function init(hasTiles) {
             //_currTile.style.cssText = "background-color: yellow;";
             _tilePorms.push(parseTileData(_currTile).then((_product) => {
                 if (SETTINGS.DebugLevel > 14) console.log('Come Back from parseTileData <<<<<<<<<< INIT <<<<<<<<<<<<<<<<<<<<<<<', _currTile, _product);
-                if(SETTINGS.EnableNewAlwaysOnTop && _currTile.isNew){ 
+                if(SETTINGS.EnableNewAlwaysOnTop && _product.isNew){ 
                     let grid = document.getElementById('vvp-items-grid');
                     grid.moveBefore(_currTile,grid.firstChild);
                 }
