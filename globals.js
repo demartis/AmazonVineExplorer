@@ -365,9 +365,9 @@ class SETTINGS_DEFAULT {
     // CssProductFavTag = "border: 2mm ridge rgba(255, 255, 102, .6); background-color: rgba(255, 255, 102, .2)";
     // CssProductRemovalTag = "border: 2mm ridge rgba(255, 87, 51, .6); background-color: rgba(255, 87, 51, .2)";
     // CssProductDefault = "border: 2mm ridge rgba(173,216,230, .6); background-color: rgba(173,216,230, .2)";
-    CssProductNewTag = "    border: 1mm solid rgb(167, 237, 41); background-color: rgba(173, 243, 137, 0.4);";
-    CssProductSaved = "";
-    CssProductFavTag = "border: 1mm solid rgba(255, 255, 102, .6); background-color: rgba(255, 255, 102, .2)";
+    CssProductNewTag = "border: 1mm solid rgb(167, 237, 41); background-color: rgba(173, 243, 137, 0.4);";
+    CssProductSaved = "border: 1mm solid rgb(131, 185, 29); background-color: rgba(173, 243, 137, 0.65);";
+    CssProductFavTag = "border: 1mm solid rgb(192, 192, 82); background-color: rgba(255, 255, 102, 0.38)";
     CssProductRemovalTag = "border: 1mm solid rgba(255, 87, 51, .6); background-color: rgba(255, 87, 51, .2)";
     CssProductDefault = "";
 
