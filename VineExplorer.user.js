@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Amazon Vine Explorer
 // @namespace    https://github.com/demartis/AmazonVineExplorer
-// @version      0.12.5
+// @version      0.12.6
 // @updateURL    https://raw.githubusercontent.com/demartis/AmazonVineExplorer/main/VineExplorer.user.js
 // @downloadURL  https://raw.githubusercontent.com/demartis/AmazonVineExplorer/main/VineExplorer.user.js
 // @supportURL   https://github.com/deburau/AmazonVineExplorer/issues
@@ -2390,7 +2390,8 @@ function initBackgroundScan() {
                     _stageZeroSites = ['queue=potluck'];
                     break;
                 default:
-                    _stageZeroSites = ['queue=potluck', 'queue=last_chance'];
+                    // _stageZeroSites = ['queue=potluck', 'queue=last_chance'];
+                    _stageZeroSites = ['queue=potluck'];
                     break;
             }
 
@@ -2515,7 +2516,8 @@ function initBackgroundScan() {
                             localStorage.setItem('AVE_BACKGROUND_SCAN_PAGE_MAX', _PageMax);
                         }
                         else {
-                            _PageMax = parseInt(localStorage.getItem('AVE_BACKGROUND_SCAN_PAGE_MAX')) || 0;
+                            // _PageMax = parseInt(localStorage.getItem('AVE_BACKGROUND_SCAN_PAGE_MAX')) || 0;
+                            _PageMax = 0; // fallback to 0 if pagination data cannot be extracted, it might mean that there is only one page, so we can set it to 0 to avoid unnecessary loops
                         }
 
                         if (SETTINGS.DebugLevel > 10) console.log('initBackgroundScan().loop.case.1 with _subStage: ', _subStage);
