@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Amazon Vine Explorer
 // @namespace    https://github.com/demartis/AmazonVineExplorer
-// @version      0.12.3
+// @version      0.12.4
 // @updateURL    https://raw.githubusercontent.com/demartis/AmazonVineExplorer/main/VineExplorer.user.js
 // @downloadURL  https://raw.githubusercontent.com/demartis/AmazonVineExplorer/main/VineExplorer.user.js
 // @supportURL   https://github.com/deburau/AmazonVineExplorer/issues
@@ -3072,8 +3072,11 @@ function addStyleToTile(_currTile, _product) {
 
     if (!_product.gotFromDB) { // We have a new one ==> Save it to our Database ;)
         database.add(_product);
-        _currTile.style.cssText = SETTINGS.CssProductSaved;
-        _currTile.classList.add('ave-element-saved');
+        //_currTile.style.cssText = SETTINGS.CssProductSaved;
+        //_currTile.classList.add('ave-element-saved');
+        // to me if a product wasn't in the database it means it is new, so we can directly mark it as new
+        _style = SETTINGS.CssProductNewTag;
+        _currTile.classList.add('ave-element-new');
     } else {
         let _style = SETTINGS.CssProductDefault;
         if (_product.isNew) {
